@@ -66,3 +66,4 @@ def write_to_file():
         csv_writer.writerow(HEADER_FM)
         csv_writer.writerows(new_list)
 
+# TODO: Used item photo files need to be pulled from the itemID folder and placed into the used directory loose.
