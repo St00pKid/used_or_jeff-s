@@ -1,0 +1,15 @@
+HighLevelName,GenericName,ItemID,Condition,ConOrNon,WholesaleCost,ShipWeight,LastPhotostreamUploadedAt,NewItemRecdDate,LocationHighLevel,LocationAreas,LocationNames,LocationIDs
+Pro Audio,Control Surface,S3CSU1,U,Non-Con,3149.37,24.64,,2022-11-07,Non-Conveyable,NC,NC-10-22-B-11,1069203
+Computers,Computer Mac Desktop,iMac27.5K.331U,U,Non-Con,1619.19,2.4,,2022-11-09,Non-Conveyable,NC,NC-23-47-C-03,1096437
+Amps and FX,Amp Combo Guitar Tube,Mark535CU12,U,Non-Con,1602.0,42.39,,2022-11-10,Non-Conveyable,NC,NC-10-22-M-04,1069328
+Amps and FX,Pedal Compressor/EQ,CompadreCompU1,U,Con,206.27,1.0,2022-10-03,2022-11-11,Conveyable,M1,M1-13-10-A-03,1115626
+Accessories,Pedalboard,SKBPS8U1,U,Non-Con,63.18,9.6,2021-11-24,2022-11-11,Non-Conveyable,NC,NC-10-24-A-12,1069516
+Amps and FX,Pedal Distortion/Overdrive,SunsetU2,U,Con,193.8,1.35,2022-10-17,2022-11-12,Conveyable,M1,M1-13-08-A-05,1115436
+Amps and FX,Amp Cabinet Bass,PN210HLFU3,U,Non-Con,557.99,52.12,,2022-11-14,Non-Conveyable,NC,NC-23-33-A-01,1096831
+Accessories,Pedalboard Power,ZumaU2,U,Con,177.41,2.55,2022-04-29,2022-11-14,Conveyable,M1,M1-14-14-D-08,1116383
+Accessories,Bag Guitar Bass,1SKBSCFB4U1,U,Non-Con,71.1,22.79,,2022-11-15,Other,,Z850882,862840
+Amps and FX,Preamp Bass,ElementCabSimU1,U,Con,177.3,0.98,,2022-11-15,Conveyable,M1,M1-13-12-D-06,1115893
+Amps and FX,Pedal Chorus/Rotary,LexRotaryV2U1,U,Con,236.24,1.5,2022-09-01,2022-11-15,Conveyable,M1,M1-14-08-B-08,1116839
+Amps and FX,Pedal Octave/Synth,PitchForkPU1,U,Con,107.04,1.8,2021-02-24,2022-11-15,Conveyable,M1,M1-12-13-B-04,1113683
+Keys and MIDI,Controller System,Push2IntU3,U,Con,474.61,9.0,,2022-11-15,Conveyable,M1,M1-14-09-A-03,1116738
+Microphones,Wireless System Mic Headworn,SWC88XBHS5DU1,U,Con,111.4,2.8,2021-04-21,2022-11-15,Conveyable,M1,M1-12-07-D-08,1114239
