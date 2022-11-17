@@ -27,7 +27,10 @@ def sorter():
     
     cfl.create_folder_list('used', used_dir)
     for item in used_dir:
-        shutil.move(item, 'used') # TODO: this is broken at the moment.
+        sub_folder = []
+        cfl.create_folder_list(f'used/{item}', sub_folder)
+        for photo in sub_folder:
+            # TODO: this is broken at the moment. Needs move function added to the photo item
         
 
 ###########################

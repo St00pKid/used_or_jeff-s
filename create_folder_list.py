@@ -6,11 +6,11 @@ new_list = []
 HEADER_FM = ['itemid', 'ebay_id', 'instock_qty', 'warehouse_qty', 'ebay_team_qty', 'newitemreceiveddate', 
              'last_upload_date', 'ebay_status', 'last_markedforebay']
 
-def create_folder_list(folder_list):
+def create_folder_list(src_location , folder_list):
     """Create folder list from condition folders. 
     Appends folder names to arguement."""
     
-    for f in listdir('sort_me/'):
+    for f in listdir(src_location):
         # Skips hidden files
         if not f.startswith("."):
             # Add folders to folder_list
@@ -65,5 +65,3 @@ def write_to_file():
         csv_writer = writer(trimmed_file)
         csv_writer.writerow(HEADER_FM)
         csv_writer.writerows(new_list)
-
-# TODO: Used item photo files need to be pulled from the itemID folder and placed into the used directory loose.
