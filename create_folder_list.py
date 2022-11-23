@@ -3,7 +3,7 @@ from csv import DictReader, reader, writer
 import json
 
 def create_folder_list(src_location , folder_list):
-    """Create folder list from condition folders. 
+    """Create folder list from condition folders. Used to skip hidden files.
     Takes argument for the source location and writes to a list variable that is passed to it."""
     
     for f in listdir(src_location):
