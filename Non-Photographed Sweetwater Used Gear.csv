@@ -1,15 +1,41 @@
 HighLevelName,GenericName,ItemID,Condition,ConOrNon,WholesaleCost,ShipWeight,LastPhotostreamUploadedAt,NewItemRecdDate,LocationHighLevel,LocationAreas,LocationNames,LocationIDs
+Microphones,Mic Condenser Boom,LizChoirU3,U,Non-Con,166.5,1.4,,2022-08-30,Non-Conveyable,NC,NC-10-24-H-07,1069595
 Pro Audio,Control Surface,S3CSU1,U,Non-Con,3149.37,24.64,,2022-11-07,Non-Conveyable,NC,NC-10-22-B-11,1069203
 Computers,Computer Mac Desktop,iMac27.5K.331U,U,Non-Con,1619.19,2.4,,2022-11-09,Non-Conveyable,NC,NC-23-47-C-03,1096437
 Amps and FX,Amp Combo Guitar Tube,Mark535CU12,U,Non-Con,1602.0,42.39,,2022-11-10,Non-Conveyable,NC,NC-10-22-M-04,1069328
-Amps and FX,Pedal Compressor/EQ,CompadreCompU1,U,Con,206.27,1.0,2022-10-03,2022-11-11,Conveyable,M1,M1-13-10-A-03,1115626
-Accessories,Pedalboard,SKBPS8U1,U,Non-Con,63.18,9.6,2021-11-24,2022-11-11,Non-Conveyable,NC,NC-10-24-A-12,1069516
-Amps and FX,Pedal Distortion/Overdrive,SunsetU2,U,Con,193.8,1.35,2022-10-17,2022-11-12,Conveyable,M1,M1-13-08-A-05,1115436
-Amps and FX,Amp Cabinet Bass,PN210HLFU3,U,Non-Con,557.99,52.12,,2022-11-14,Non-Conveyable,NC,NC-23-33-A-01,1096831
-Accessories,Pedalboard Power,ZumaU2,U,Con,177.41,2.55,2022-04-29,2022-11-14,Conveyable,M1,M1-14-14-D-08,1116383
-Accessories,Bag Guitar Bass,1SKBSCFB4U1,U,Non-Con,71.1,22.79,,2022-11-15,Other,,Z850882,862840
-Amps and FX,Preamp Bass,ElementCabSimU1,U,Con,177.3,0.98,,2022-11-15,Conveyable,M1,M1-13-12-D-06,1115893
-Amps and FX,Pedal Chorus/Rotary,LexRotaryV2U1,U,Con,236.24,1.5,2022-09-01,2022-11-15,Conveyable,M1,M1-14-08-B-08,1116839
-Amps and FX,Pedal Octave/Synth,PitchForkPU1,U,Con,107.04,1.8,2021-02-24,2022-11-15,Conveyable,M1,M1-12-13-B-04,1113683
-Keys and MIDI,Controller System,Push2IntU3,U,Con,474.61,9.0,,2022-11-15,Conveyable,M1,M1-14-09-A-03,1116738
-Microphones,Wireless System Mic Headworn,SWC88XBHS5DU1,U,Con,111.4,2.8,2021-04-21,2022-11-15,Conveyable,M1,M1-12-07-D-08,1114239
+Band and Orchestra,Clarinet,BFB12U2,U,Non-Con,422.1,5.94,,2022-11-15,Non-Conveyable,NC,NC-10-42-M-03,1072435
+Lighting,Light Par/Wash,4BarLTQuadBTU2,U,Non-Con,240.98,19.2,,2022-11-16,Non-Conveyable,NC,NC-10-38-B-05,1071789
+Drums,Drum Kit Acoustic,CT1-J484-EMGU1,U,Non-Con,515.8,58.64,,2022-11-16,Non-Conveyable,NC,NC-23-43-A-01,1096540
+Pro Audio,Speaker PA Active,ETX35PU5,U,Non-Con,906.84,95.6,,2022-11-16,Non-Conveyable,NC,NC-29-21-B-03,2322480
+Sweetwater,Miscellaneous,H1StrapU1,U,Con,10.8,0.32,,2022-11-16,Conveyable,M1,M1-13-13-B-01,1115936
+Amps and FX,Pedal Multi-FX Guitar,HelixU2,U,Non-Con,944.99,23.0,,2022-11-16,Non-Conveyable,NC,NC-23-51-C-03,1096317
+Accessories,Stand Keyboard,L300BU1,U,Non-Con,63.88,24.4,2021-11-18,2022-11-16,Non-Conveyable,NC,NC-23-26-B-08,1097051
+Pro Audio,Mixer,1204USBU1,U,Con,91.58,10.34,2022-02-10,2022-11-17,Conveyable,M1,M1-14-12-D-07,1116550
+Accessories,Case Rack,3i2217M124uU1,U,Non-Con,226.6,32.5,,2022-11-17,Non-Conveyable,NC,NC-23-43-C-01,1096555
+DJ,DJ Turntable,ATLP120XUSBBKU1,U,Non-Con,174.82,17.0,2021-10-21,2022-11-17,Non-Conveyable,NC,NC-10-22-J-09,1069297
+Keys and MIDI,Keyboard Arranger,DGX670BKU1,U,Non-Con,530.1,68.4,,2022-11-17,Non-Conveyable,NC,NC-23-44-B-10,1096522
+Accessories,Wireless Adapter/Cable,GA2-XSW2U1,U,Con,18.79,0.3,,2022-11-17,Conveyable,M1,M1-13-08-C-02,1115481
+Accessories,Stand Music,M48-6pkU1,U,Non-Con,175.08,35.3,2021-11-10,2022-11-17,Non-Conveyable,NC,NC-23-45-A-01,1096480
+Lighting,Light Bar,MegaBarRGBAU1,U,Non-Con,129.59,7.84,,2022-11-17,Non-Conveyable,NC,NC-10-36-F-11,1071519
+Lighting,Light Bar,MegaBarRGBAU2,U,Non-Con,137.66,7.84,,2022-11-17,Non-Conveyable,NC,NC-10-36-E-09,1071505
+Pro Audio,Audio Interface USB,PlayAUDIO12U1,U,Con,350.99,3.8,2019-10-21,2022-11-17,Conveyable,M1,M1-13-13-D-02,1115985
+Amps and FX,Pedal Delay/Reverb,TimeLineDelayU3,U,Con,298.89,2.0,2022-11-02,2022-11-17,Conveyable,M1,M1-14-10-B-02,1116665
+Computers,iPad/iPod Accessory,ToneLinkU1,U,Con,19.12,0.11,2022-05-19,2022-11-17,Conveyable,M1,M1-14-08-B-03,1116834
+Pro Audio,Audio Interface USB,Ultralite5U1,U,Con,404.1,4.2,,2022-11-17,Conveyable,M1,M1-14-07-B-01,1116928
+Drums,Drum Rug,VP185RBLU1,U,Non-Con,86.06,10.2,,2022-11-17,Non-Conveyable,NC,NC-10-22-G-03,1069255
+Pro Audio,Speaker PA Monitor Active,B205DU2,U,Con,115.99,9.14,,2022-11-18,Conveyable,M1,M1-14-11-B-01,1116592
+Pro Audio,Headsets,BPHS1U1,U,Con,106.72,1.24,,2022-11-18,Conveyable,M1,M1-14-11-C-04,1116619
+Drums,Drum Trigger,DDRSTourPckU2,U,Non-Con,89.64,5.29,,2022-11-18,Non-Conveyable,NC,NC-10-30-G-02,1070550
+Amps and FX,Pedal Delay/Reverb,DecoTapeV2U3,U,Con,256.82,1.6,2022-10-26,2022-11-18,Conveyable,M1,M1-13-12-C-06,1115869
+Amps and FX,Pedal Delay/Reverb,ElCapistanV2U2,U,Con,256.82,1.6,2022-09-19,2022-11-18,Conveyable,M1,M1-13-08-C-02,1115481
+Pro Audio,Amp Power,EP4000U1,U,Non-Con,323.33,48.0,2021-09-13,2022-11-18,Non-Conveyable,NC,NC-10-32-F-10,1070870
+Microphones,Wireless System Guitar,G4SLX14U1,U,Con,220.5,6.0,,2022-11-18,Conveyable,M1,M1-14-11-A-02,1116569
+Accessories,Stand Mic Boom,KM21090U1,U,Non-Con,42.48,7.6,2022-10-18,2022-11-18,Non-Conveyable,NC,NC-10-26-C-03,1069855
+Accessories,Pedalboard Accessory,MOD-SUMV2U1,U,Con,72.0,0.5,2021-11-18,2022-11-18,Conveyable,M1,M1-12-01-C-02,1114713
+Accessories,Pedalboard Accessory,MOD-XLRMFU1,U,Con,66.6,0.65,,2022-11-18,Conveyable,M1,M1-12-01-C-02,1114713
+Pro Audio,Mixer,Model16U2,U,Non-Con,448.2,22.0,,2022-11-18,Non-Conveyable,NC,NC-10-22-B-09,1069201
+Amps and FX,Amp Attenuator,OXU3,U,Non-Con,944.37,20.0,,2022-11-18,Non-Conveyable,NC,NC-10-16-K-01,1068461
+Pro Audio,Speaker PA Active,PK112AU1,U,Non-Con,96.55,23.8,,2022-11-18,Non-Conveyable,NC,NC-23-37-A-02,1096712
+Pro Audio,Speaker PA Sub Passive,TX2181U1,U,Non-Con,986.09,134.0,,2022-11-18,Non-Conveyable,NC,NC-29-32-F-03,2434955
+Microphones,Wireless System Guitar,XSWDPedalSetU1,U,Con,237.24,2.6,2021-10-18,2022-11-18,Conveyable,M1,M1-14-04-C-01,1117192
+Amps and FX,Pedal Delay/Reverb,DecoTapeV2U4,U,Con,256.82,1.6,2022-10-12,2022-11-19,Conveyable,M1,M1-13-02-C-06,1114909
