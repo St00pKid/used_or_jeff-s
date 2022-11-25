@@ -20,7 +20,7 @@ def sorter(sort_me, tobeposted, used):
     folder_list = []
     used_dir = []
     
-    # Sort the folders from sort_me to either used or tobeposted locations.
+    # Sort the folders from source dir to either used or tobeposted locations.
     # Original folders are deleted from sort_me after they're moved.
     cfl.create_folder_list(sort_me, folder_list)
     for itemID in folder_list:
@@ -51,10 +51,11 @@ def sorter(sort_me, tobeposted, used):
 ###########################
 start = time.perf_counter()
 
-cfl.create_new_list('Untitled.csv', 'trimmed_file.csv')
-sorter('/Volumes/ebay/sort_me', '/Volumes/ebay/testtobeposted', '/Volumes/ebay/testused' )
+cfl.create_new_list('Untitled.csv', 'trimmed_file.csv') # Update data set
+sorter('/Volumes/ebay/ToBeEdited/tobesorted', '/Volumes/ebay/testtobeposted', '/Volumes/ImageEngine/testusedinbox' )
 
 finish = time.perf_counter()
 ############################
 
 print(f"completed in {finish - start:0.4f} seconds")
+
