@@ -35,18 +35,24 @@ def sorter(sort_me, tobeposted, used):
             shutil.rmtree(f'{sort_me}/{itemID}/')
             
         else:
-            print(f'oops! {itemID} is wrong.')
+            dir_util.copy_tree(f"{sort_me}/{itemID}",
+                                    f"{tobeposted}/{itemID}")
+            shutil.rmtree(f'{sort_me}/{itemID}/')
         
     
     # After the folders are sorted the individual photo files for used items are pulled from itemID folders and placed into used
     # Then empty folder is deleted. 
     cfl.create_folder_list(used, used_dir)
+    
+    
     for itemID in used_dir:
+        print(f'{itemID}')
         sub_folder = []
         cfl.create_folder_list(f'{used}/{itemID}', sub_folder)
         for photo in sub_folder:
-            shutil.move(f'{used}/{itemID}/{photo}', f'{used}')
+            shutil.copy(f'{used}/{itemID}/{photo}', f'{used}')
         shutil.rmtree(f'{used}/{itemID}')
+
 
 ###########################
 start = time.perf_counter()
