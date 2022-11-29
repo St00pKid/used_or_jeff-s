@@ -65,6 +65,13 @@ finish = time.perf_counter()
 
 print(f"completed in {finish - start:0.4f} seconds")
 
-# TODO: add functionality to add Trade to the folder name of items with condition trade.
+# TODO: add 'Trade' to the folder name of items with condition trade.
 #       Will need to pull a report of all items with condition 'T' Trade. Or a report of all items -
-#       assigned to us and loop through them to check against the database.
+#       assigned to us and loop through them to check against the database. This is on DOMO-ebay module photography
+#       Report is already used for the archive sorter.
+# TODO: Need to add a try to several places where errors occur, for example if used_records is missing it needs to be created
+#       Permission error for folders that are claiming to be in use and for when the imageengine isn't mounted.
+#
+#       working on a GUI to make this runable by others.
+#       Buttons to run the sorters, an exceptions field to skip certain items if they're kicking errors.
+#       Export a used list.
