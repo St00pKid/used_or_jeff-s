@@ -47,8 +47,8 @@
         "ItemID": "4BarLTQuadBTU2",
         "ebay_id": "",
         "instock_qty": "1",
-        "warehouse_qty": "0",
-        "ebay_team_qty": "1",
+        "warehouse_qty": "1",
+        "ebay_team_qty": "0",
         "newitemreceiveddate": "11/16/2022",
         "last_upload_date": "",
         "ebay_status": "",
@@ -245,8 +245,8 @@
         "ItemID": "HelixU2",
         "ebay_id": "",
         "instock_qty": "1",
-        "warehouse_qty": "0",
-        "ebay_team_qty": "1",
+        "warehouse_qty": "1",
+        "ebay_team_qty": "0",
         "newitemreceiveddate": "11/16/2022",
         "last_upload_date": "",
         "ebay_status": "",
@@ -267,7 +267,7 @@
         "ItemID": "JVM410HU1",
         "ebay_id": "46718",
         "instock_qty": "1",
-        "warehouse_qty": "0",
+        "warehouse_qty": "1",
         "ebay_team_qty": "0",
         "newitemreceiveddate": "11/18/2022",
         "last_upload_date": "",
@@ -355,8 +355,8 @@
         "ItemID": "MegaBarRGBAU2",
         "ebay_id": "",
         "instock_qty": "1",
-        "warehouse_qty": "0",
-        "ebay_team_qty": "1",
+        "warehouse_qty": "1",
+        "ebay_team_qty": "0",
         "newitemreceiveddate": "11/17/2022",
         "last_upload_date": "",
         "ebay_status": "",
@@ -641,8 +641,8 @@
         "ItemID": "TFX122MANU5",
         "ebay_id": "",
         "instock_qty": "1",
-        "warehouse_qty": "0",
-        "ebay_team_qty": "1",
+        "warehouse_qty": "1",
+        "ebay_team_qty": "0",
         "newitemreceiveddate": "11/21/2022",
         "last_upload_date": "",
         "ebay_status": "",
@@ -769,6 +769,61 @@
         "ebay_status": "",
         "last_markedforebay": ""
     },
+    "DWCP5000AD4XFU1": {
+        "ItemID": "DWCP5000AD4XFU1",
+        "ebay_id": "",
+        "instock_qty": "1",
+        "warehouse_qty": "1",
+        "ebay_team_qty": "0",
+        "newitemreceiveddate": "11/28/2022",
+        "last_upload_date": "",
+        "ebay_status": "",
+        "last_markedforebay": ""
+    },
+    "FZGSREV7WBLU1": {
+        "ItemID": "FZGSREV7WBLU1",
+        "ebay_id": "",
+        "instock_qty": "1",
+        "warehouse_qty": "0",
+        "ebay_team_qty": "0",
+        "newitemreceiveddate": "11/28/2022",
+        "last_upload_date": "",
+        "ebay_status": "",
+        "last_markedforebay": ""
+    },
+    "GPPC14055SDFU1": {
+        "ItemID": "GPPC14055SDFU1",
+        "ebay_id": "",
+        "instock_qty": "1",
+        "warehouse_qty": "0",
+        "ebay_team_qty": "0",
+        "newitemreceiveddate": "11/28/2022",
+        "last_upload_date": "",
+        "ebay_status": "",
+        "last_markedforebay": ""
+    },
+    "HP900RWNU1": {
+        "ItemID": "HP900RWNU1",
+        "ebay_id": "",
+        "instock_qty": "1",
+        "warehouse_qty": "0",
+        "ebay_team_qty": "0",
+        "newitemreceiveddate": "11/28/2022",
+        "last_upload_date": "",
+        "ebay_status": "",
+        "last_markedforebay": ""
+    },
+    "PTCLJMXXU1": {
+        "ItemID": "PTCLJMXXU1",
+        "ebay_id": "",
+        "instock_qty": "1",
+        "warehouse_qty": "0",
+        "ebay_team_qty": "0",
+        "newitemreceiveddate": "11/28/2022",
+        "last_upload_date": "",
+        "ebay_status": "",
+        "last_markedforebay": ""
+    },
     "StealthWrlsPU2": {
         "ItemID": "StealthWrlsPU2",
         "ebay_id": "",
@@ -776,6 +831,72 @@
         "warehouse_qty": "1",
         "ebay_team_qty": "0",
         "newitemreceiveddate": "11/25/2022",
+        "last_upload_date": "",
+        "ebay_status": "",
+        "last_markedforebay": ""
+    },
+    "ClarityMSTU1": {
+        "ItemID": "ClarityMSTU1",
+        "ebay_id": "",
+        "instock_qty": "1",
+        "warehouse_qty": "0",
+        "ebay_team_qty": "0",
+        "newitemreceiveddate": "11/29/2022",
+        "last_upload_date": "",
+        "ebay_status": "",
+        "last_markedforebay": ""
+    },
+    "IBT402U2": {
+        "ItemID": "IBT402U2",
+        "ebay_id": "",
+        "instock_qty": "1",
+        "warehouse_qty": "0",
+        "ebay_team_qty": "0",
+        "newitemreceiveddate": "11/28/2022",
+        "last_upload_date": "",
+        "ebay_status": "",
+        "last_markedforebay": ""
+    },
+    "K0967U1": {
+        "ItemID": "K0967U1",
+        "ebay_id": "",
+        "instock_qty": "1",
+        "warehouse_qty": "0",
+        "ebay_team_qty": "0",
+        "newitemreceiveddate": "11/28/2022",
+        "last_upload_date": "",
+        "ebay_status": "",
+        "last_markedforebay": ""
+    },
+    "LexRotaryV2U2": {
+        "ItemID": "LexRotaryV2U2",
+        "ebay_id": "",
+        "instock_qty": "1",
+        "warehouse_qty": "0",
+        "ebay_team_qty": "0",
+        "newitemreceiveddate": "11/28/2022",
+        "last_upload_date": "",
+        "ebay_status": "",
+        "last_markedforebay": ""
+    },
+    "MN668U1": {
+        "ItemID": "MN668U1",
+        "ebay_id": "",
+        "instock_qty": "1",
+        "warehouse_qty": "1",
+        "ebay_team_qty": "0",
+        "newitemreceiveddate": "11/28/2022",
+        "last_upload_date": "",
+        "ebay_status": "",
+        "last_markedforebay": ""
+    },
+    "SPDSXPROU1": {
+        "ItemID": "SPDSXPROU1",
+        "ebay_id": "",
+        "instock_qty": "1",
+        "warehouse_qty": "0",
+        "ebay_team_qty": "0",
+        "newitemreceiveddate": "11/28/2022",
         "last_upload_date": "",
         "ebay_status": "",
         "last_markedforebay": ""
@@ -894,7 +1015,7 @@
         "ItemID": "1204USBU1",
         "ebay_id": "",
         "instock_qty": "1",
-        "warehouse_qty": "1",
+        "warehouse_qty": "0",
         "ebay_team_qty": "0",
         "newitemreceiveddate": "11/17/2022",
         "last_upload_date": "2/10/2022",
@@ -1613,7 +1734,7 @@
         "ebay_team_qty": "0",
         "newitemreceiveddate": "3/4/2022",
         "last_upload_date": "3/10/2022",
-        "ebay_status": "Post #3",
+        "ebay_status": "Failed",
         "last_markedforebay": "10/20/2022"
     },
     "BE-MiniU1": {
@@ -2086,7 +2207,7 @@
         "ebay_team_qty": "0",
         "newitemreceiveddate": "11/8/2021",
         "last_upload_date": "11/24/2021",
-        "ebay_status": "Failed",
+        "ebay_status": "On Invoice",
         "last_markedforebay": "10/20/2022"
     },
     "CS68WHU1": {
@@ -2500,7 +2621,7 @@
         "ItemID": "ElCapistanV2U2",
         "ebay_id": "",
         "instock_qty": "1",
-        "warehouse_qty": "1",
+        "warehouse_qty": "0",
         "ebay_team_qty": "0",
         "newitemreceiveddate": "11/23/2022",
         "last_upload_date": "9/19/2022",
@@ -3222,17 +3343,6 @@
         "ebay_status": "",
         "last_markedforebay": ""
     },
-    "HCS20RU1": {
-        "ItemID": "HCS20RU1",
-        "ebay_id": "46971",
-        "instock_qty": "1",
-        "warehouse_qty": "1",
-        "ebay_team_qty": "0",
-        "newitemreceiveddate": "11/22/2022",
-        "last_upload_date": "11/1/2021",
-        "ebay_status": "Shipped",
-        "last_markedforebay": "8/14/2017"
-    },
     "HcShpVlaCs15U1": {
         "ItemID": "HcShpVlaCs15U1",
         "ebay_id": "",
@@ -3288,17 +3398,6 @@
         "ebay_status": "",
         "last_markedforebay": ""
     },
-    "HRExpU1": {
-        "ItemID": "HRExpU1",
-        "ebay_id": "",
-        "instock_qty": "1",
-        "warehouse_qty": "1",
-        "ebay_team_qty": "0",
-        "newitemreceiveddate": "11/23/2022",
-        "last_upload_date": "6/6/2022",
-        "ebay_status": "",
-        "last_markedforebay": ""
-    },
     "HT850BCU1": {
         "ItemID": "HT850BCU1",
         "ebay_id": "",
@@ -3307,17 +3406,6 @@
         "ebay_team_qty": "0",
         "newitemreceiveddate": "10/14/2022",
         "last_upload_date": "11/17/2022",
-        "ebay_status": "",
-        "last_markedforebay": ""
-    },
-    "HWP830U1": {
-        "ItemID": "HWP830U1",
-        "ebay_id": "",
-        "instock_qty": "1",
-        "warehouse_qty": "1",
-        "ebay_team_qty": "0",
-        "newitemreceiveddate": "7/14/2022",
-        "last_upload_date": "8/9/2022",
         "ebay_status": "",
         "last_markedforebay": ""
     },
@@ -3384,17 +3472,6 @@
         "ebay_team_qty": "0",
         "newitemreceiveddate": "10/29/2022",
         "last_upload_date": "5/27/2021",
-        "ebay_status": "",
-        "last_markedforebay": ""
-    },
-    "IRX115SU1": {
-        "ItemID": "IRX115SU1",
-        "ebay_id": "",
-        "instock_qty": "1",
-        "warehouse_qty": "1",
-        "ebay_team_qty": "0",
-        "newitemreceiveddate": "11/10/2022",
-        "last_upload_date": "8/18/2021",
         "ebay_status": "",
         "last_markedforebay": ""
     },
@@ -3508,17 +3585,6 @@
         "ebay_status": "",
         "last_markedforebay": ""
     },
-    "Kata100212mk2U1": {
-        "ItemID": "Kata100212mk2U1",
-        "ebay_id": "",
-        "instock_qty": "1",
-        "warehouse_qty": "1",
-        "ebay_team_qty": "0",
-        "newitemreceiveddate": "9/21/2022",
-        "last_upload_date": "8/4/2021",
-        "ebay_status": "",
-        "last_markedforebay": ""
-    },
     "KataArtistmk2U1": {
         "ItemID": "KataArtistmk2U1",
         "ebay_id": "",
@@ -3604,17 +3670,6 @@
         "ebay_team_qty": "0",
         "newitemreceiveddate": "11/16/2022",
         "last_upload_date": "11/16/2022",
-        "ebay_status": "",
-        "last_markedforebay": ""
-    },
-    "KeyLab88mk2U1": {
-        "ItemID": "KeyLab88mk2U1",
-        "ebay_id": "",
-        "instock_qty": "1",
-        "warehouse_qty": "1",
-        "ebay_team_qty": "0",
-        "newitemreceiveddate": "11/23/2022",
-        "last_upload_date": "3/31/2021",
         "ebay_status": "",
         "last_markedforebay": ""
     },
@@ -3824,7 +3879,7 @@
         "ebay_team_qty": "0",
         "newitemreceiveddate": "6/13/2022",
         "last_upload_date": "6/28/2022",
-        "ebay_status": "Failed",
+        "ebay_status": "Post #4",
         "last_markedforebay": "9/22/2022"
     },
     "LEC1KCTMTSSU2": {
@@ -3868,17 +3923,6 @@
         "ebay_team_qty": "0",
         "newitemreceiveddate": "11/15/2022",
         "last_upload_date": "9/1/2022",
-        "ebay_status": "",
-        "last_markedforebay": ""
-    },
-    "LinkU1": {
-        "ItemID": "LinkU1",
-        "ebay_id": "",
-        "instock_qty": "1",
-        "warehouse_qty": "1",
-        "ebay_team_qty": "0",
-        "newitemreceiveddate": "9/21/2022",
-        "last_upload_date": "10/13/2022",
         "ebay_status": "",
         "last_markedforebay": ""
     },
@@ -3956,17 +4000,6 @@
         "ebay_team_qty": "0",
         "newitemreceiveddate": "10/6/2022",
         "last_upload_date": "11/6/2021",
-        "ebay_status": "",
-        "last_markedforebay": ""
-    },
-    "LoudBox700BTU1": {
-        "ItemID": "LoudBox700BTU1",
-        "ebay_id": "",
-        "instock_qty": "1",
-        "warehouse_qty": "1",
-        "ebay_team_qty": "0",
-        "newitemreceiveddate": "11/14/2022",
-        "last_upload_date": "2/3/2020",
         "ebay_status": "",
         "last_markedforebay": ""
     },
@@ -4128,8 +4161,8 @@
         "ItemID": "MasterCompU1",
         "ebay_id": "",
         "instock_qty": "1",
-        "warehouse_qty": "0",
-        "ebay_team_qty": "1",
+        "warehouse_qty": "1",
+        "ebay_team_qty": "0",
         "newitemreceiveddate": "11/22/2022",
         "last_upload_date": "4/11/2022",
         "ebay_status": "",
@@ -4234,17 +4267,6 @@
         "ebay_status": "",
         "last_markedforebay": ""
     },
-    "ME4U1": {
-        "ItemID": "ME4U1",
-        "ebay_id": "",
-        "instock_qty": "1",
-        "warehouse_qty": "1",
-        "ebay_team_qty": "0",
-        "newitemreceiveddate": "11/9/2022",
-        "last_upload_date": "11/15/2022",
-        "ebay_status": "",
-        "last_markedforebay": ""
-    },
     "MediaTray2U1": {
         "ItemID": "MediaTray2U1",
         "ebay_id": "",
@@ -4297,17 +4319,6 @@
         "ebay_team_qty": "0",
         "newitemreceiveddate": "11/1/2022",
         "last_upload_date": "11/8/2022",
-        "ebay_status": "",
-        "last_markedforebay": ""
-    },
-    "MICBCBM3000U1": {
-        "ItemID": "MICBCBM3000U1",
-        "ebay_id": "",
-        "instock_qty": "1",
-        "warehouse_qty": "1",
-        "ebay_team_qty": "0",
-        "newitemreceiveddate": "11/22/2022",
-        "last_upload_date": "11/26/2021",
         "ebay_status": "",
         "last_markedforebay": ""
     },
@@ -4373,17 +4384,6 @@
         "warehouse_qty": "0",
         "ebay_team_qty": "0",
         "newitemreceiveddate": "10/29/2022",
-        "last_upload_date": "11/7/2022",
-        "ebay_status": "",
-        "last_markedforebay": ""
-    },
-    "MKE440U1": {
-        "ItemID": "MKE440U1",
-        "ebay_id": "",
-        "instock_qty": "1",
-        "warehouse_qty": "1",
-        "ebay_team_qty": "0",
-        "newitemreceiveddate": "10/28/2022",
         "last_upload_date": "11/7/2022",
         "ebay_status": "",
         "last_markedforebay": ""
@@ -4835,17 +4835,6 @@
         "warehouse_qty": "1",
         "ebay_team_qty": "0",
         "newitemreceiveddate": "9/6/2022",
-        "last_upload_date": "11/1/2022",
-        "ebay_status": "",
-        "last_markedforebay": ""
-    },
-    "PF50CU1": {
-        "ItemID": "PF50CU1",
-        "ebay_id": "",
-        "instock_qty": "1",
-        "warehouse_qty": "1",
-        "ebay_team_qty": "0",
-        "newitemreceiveddate": "10/26/2022",
         "last_upload_date": "11/1/2022",
         "ebay_status": "",
         "last_markedforebay": ""
@@ -5311,17 +5300,6 @@
         "last_upload_date": "9/18/2019",
         "ebay_status": "",
         "last_markedforebay": ""
-    },
-    "RiversideU1": {
-        "ItemID": "RiversideU1",
-        "ebay_id": "64814",
-        "instock_qty": "1",
-        "warehouse_qty": "1",
-        "ebay_team_qty": "0",
-        "newitemreceiveddate": "10/31/2022",
-        "last_upload_date": "9/1/2022",
-        "ebay_status": "Shipped",
-        "last_markedforebay": "5/9/2019"
     },
     "RiversideU2": {
         "ItemID": "RiversideU2",
@@ -6002,7 +5980,7 @@
         "ebay_team_qty": "0",
         "newitemreceiveddate": "11/8/2022",
         "last_upload_date": "11/16/2022",
-        "ebay_status": "Unlisted",
+        "ebay_status": "Post #1",
         "last_markedforebay": "11/24/2022"
     },
     "TeleCabPar2CSU1": {
@@ -6035,17 +6013,6 @@
         "ebay_team_qty": "0",
         "newitemreceiveddate": "9/1/2022",
         "last_upload_date": "9/1/2022",
-        "ebay_status": "",
-        "last_markedforebay": ""
-    },
-    "TF29U1": {
-        "ItemID": "TF29U1",
-        "ebay_id": "",
-        "instock_qty": "1",
-        "warehouse_qty": "1",
-        "ebay_team_qty": "0",
-        "newitemreceiveddate": "8/31/2022",
-        "last_upload_date": "9/20/2022",
         "ebay_status": "",
         "last_markedforebay": ""
     },
@@ -6093,17 +6060,6 @@
         "ebay_status": "",
         "last_markedforebay": ""
     },
-    "TimeLineDelayU3": {
-        "ItemID": "TimeLineDelayU3",
-        "ebay_id": "59904",
-        "instock_qty": "1",
-        "warehouse_qty": "1",
-        "ebay_team_qty": "0",
-        "newitemreceiveddate": "11/23/2022",
-        "last_upload_date": "6/6/2022",
-        "ebay_status": "Shipped",
-        "last_markedforebay": "1/4/2019"
-    },
     "TrackerU1": {
         "ItemID": "TrackerU1",
         "ebay_id": "",
@@ -6134,17 +6090,6 @@
         "ebay_team_qty": "0",
         "newitemreceiveddate": "11/21/2022",
         "last_upload_date": "3/16/2022",
-        "ebay_status": "",
-        "last_markedforebay": ""
-    },
-    "TrueBass9SU1": {
-        "ItemID": "TrueBass9SU1",
-        "ebay_id": "",
-        "instock_qty": "1",
-        "warehouse_qty": "1",
-        "ebay_team_qty": "0",
-        "newitemreceiveddate": "11/15/2022",
-        "last_upload_date": "7/26/2022",
         "ebay_status": "",
         "last_markedforebay": ""
     },
@@ -6581,8 +6526,8 @@
         "ItemID": "ZXA1SubU1",
         "ebay_id": "",
         "instock_qty": "1",
-        "warehouse_qty": "0",
-        "ebay_team_qty": "1",
+        "warehouse_qty": "1",
+        "ebay_team_qty": "0",
         "newitemreceiveddate": "11/21/2022",
         "last_upload_date": "10/13/2021",
         "ebay_status": "",
@@ -6614,7 +6559,7 @@
         "ItemID": "BigSkyReverbU3",
         "ebay_id": "62689",
         "instock_qty": "1",
-        "warehouse_qty": "0",
+        "warehouse_qty": "1",
         "ebay_team_qty": "0",
         "newitemreceiveddate": "11/25/2022",
         "last_upload_date": "1/24/2022",
@@ -6636,12 +6581,23 @@
         "ItemID": "G9500JDFTU2",
         "ebay_id": "83382",
         "instock_qty": "1",
-        "warehouse_qty": "0",
+        "warehouse_qty": "1",
         "ebay_team_qty": "0",
         "newitemreceiveddate": "11/26/2022",
         "last_upload_date": "5/23/2022",
         "ebay_status": "Shipped",
         "last_markedforebay": "5/18/2022"
+    },
+    "GRoto212U1": {
+        "ItemID": "GRoto212U1",
+        "ebay_id": "",
+        "instock_qty": "1",
+        "warehouse_qty": "0",
+        "ebay_team_qty": "0",
+        "newitemreceiveddate": "11/28/2022",
+        "last_upload_date": "8/8/2019",
+        "ebay_status": "",
+        "last_markedforebay": ""
     },
     "HSSWP1U1": {
         "ItemID": "HSSWP1U1",
@@ -6654,25 +6610,69 @@
         "ebay_status": "Shipped",
         "last_markedforebay": "9/24/2018"
     },
-    "KLA12U1": {
-        "ItemID": "KLA12U1",
-        "ebay_id": "46617",
-        "instock_qty": "1",
-        "warehouse_qty": "1",
-        "ebay_team_qty": "0",
-        "newitemreceiveddate": "11/25/2022",
-        "last_upload_date": "4/28/2022",
-        "ebay_status": "Shipped",
-        "last_markedforebay": "7/25/2017"
-    },
-    "StealthWrlsPU1": {
-        "ItemID": "StealthWrlsPU1",
+    "Crush12ORU1": {
+        "ItemID": "Crush12ORU1",
         "ebay_id": "",
         "instock_qty": "1",
         "warehouse_qty": "1",
         "ebay_team_qty": "0",
-        "newitemreceiveddate": "11/25/2022",
-        "last_upload_date": "10/21/2021",
+        "newitemreceiveddate": "11/28/2022",
+        "last_upload_date": "2/10/2022",
+        "ebay_status": "",
+        "last_markedforebay": ""
+    },
+    "OjaiR30ExpU1": {
+        "ItemID": "OjaiR30ExpU1",
+        "ebay_id": "62488",
+        "instock_qty": "1",
+        "warehouse_qty": "0",
+        "ebay_team_qty": "0",
+        "newitemreceiveddate": "11/29/2022",
+        "last_upload_date": "7/22/2021",
+        "ebay_status": "Shipped",
+        "last_markedforebay": "3/6/2019"
+    },
+    "PBassDMWBU1": {
+        "ItemID": "PBassDMWBU1",
+        "ebay_id": "86886",
+        "instock_qty": "1",
+        "warehouse_qty": "1",
+        "ebay_team_qty": "0",
+        "newitemreceiveddate": "11/28/2022",
+        "last_upload_date": "11/5/2021",
+        "ebay_status": "Shipped",
+        "last_markedforebay": "10/24/2022"
+    },
+    "PDCBC10U1": {
+        "ItemID": "PDCBC10U1",
+        "ebay_id": "",
+        "instock_qty": "1",
+        "warehouse_qty": "1",
+        "ebay_team_qty": "0",
+        "newitemreceiveddate": "10/15/2022",
+        "last_upload_date": "10/27/2022",
+        "ebay_status": "",
+        "last_markedforebay": ""
+    },
+    "PlethoraX5U1": {
+        "ItemID": "PlethoraX5U1",
+        "ebay_id": "",
+        "instock_qty": "1",
+        "warehouse_qty": "0",
+        "ebay_team_qty": "0",
+        "newitemreceiveddate": "11/28/2022",
+        "last_upload_date": "5/6/2021",
+        "ebay_status": "",
+        "last_markedforebay": ""
+    },
+    "Rum40U2": {
+        "ItemID": "Rum40U2",
+        "ebay_id": "",
+        "instock_qty": "1",
+        "warehouse_qty": "0",
+        "ebay_team_qty": "0",
+        "newitemreceiveddate": "11/28/2022",
+        "last_upload_date": "12/3/2020",
         "ebay_status": "",
         "last_markedforebay": ""
     }

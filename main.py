@@ -65,3 +65,6 @@ finish = time.perf_counter()
 
 print(f"completed in {finish - start:0.4f} seconds")
 
+# TODO: add functionality to add Trade to the folder name of items with condition trade.
+#       Will need to pull a report of all items with condition 'T' Trade. Or a report of all items -
+#       assigned to us and loop through them to check against the database.

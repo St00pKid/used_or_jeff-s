@@ -62,6 +62,4 @@ def create_new_list(src_file, trimmed_file):
         csv_writer.writerows(new_list)
         
     csv_to_json(f'{trimmed_file}')
-   # TODO: the filemaker all used list has a blank entry in the second[1] column for items that are not in the module.
-   # This provides a method to sort used items between if the image files need to go to imagetools vs tobeposted. 
-   # This file is ready, sort in main needs changed to look for the proper values in used_records.json.
+  
