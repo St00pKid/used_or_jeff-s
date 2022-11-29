@@ -5,9 +5,6 @@ import shutil
 import time
 
 
-with open('used_records.json', 'r') as x:
-    used_dict = json.load(x)
-
 def sorter(sort_me, tobeposted, used):
     """Sorts folders in first argument to second arguement or third argument based on if they are in the used_records.json. 
     used_records.json needs to be in the same folder as this file. Arguments for paths are used make it easier to change where the script is pointing.
@@ -19,6 +16,9 @@ def sorter(sort_me, tobeposted, used):
     
     folder_list = []
     used_dir = []
+    
+    with open('used_records.json', 'r') as x:
+        used_dict = json.load(x)
     
     # Sort the folders from source dir to either used or tobeposted locations.
     # Original folders are deleted from sort_me after they're moved.
