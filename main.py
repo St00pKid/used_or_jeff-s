@@ -4,7 +4,6 @@ from distutils import dir_util
 import shutil
 import time
 
-
 def sorter(sort_me, tobeposted, used):
     """Sorts folders in first argument to second arguement or third argument based on if they are in the used_records.json. 
     used_records.json needs to be in the same folder as this file. Arguments for paths are used make it easier to change where the script is pointing.
@@ -13,13 +12,19 @@ def sorter(sort_me, tobeposted, used):
     If True the folder with photos is moved to whatever folder is assigned to the used argument. If False the are moved to the tobeposted argument.
     After folders are moved the individual image files in the used item folders are moved from their folders to the used directory and the original folders
     are deleted."""
+    HEADER_FM = ['ItemID', 'ebay_id', 'instock_qty', 'warehouse_qty', 'ebay_team_qty', 'newitemreceiveddate', 
+             'last_upload_date', 'ebay_status', 'last_markedforebay']
+    HEADER_MODULE = ['eBayModuleID', 'ItemID', 'Condition', 'PhotographedBy', 'PhotographedAt', 'DateMarkedForEbay', 'WholesaleCost']
+    
+    cfl.create_new_list('Untitled.csv', 'used.csv', HEADER_FM, 'used_records.json')
+    cfl.create_new_list('eBay Module - Photography - All Records.csv', 'distressed.csv', HEADER_MODULE, 'module_records.json')
     
     folder_list = []
     used_dir = []
-    
+    module_dir = []
     with open('used_records.json', 'r') as x:
         used_dict = json.load(x)
-    
+
     # Sort the folders from source dir to either used or tobeposted locations.
     # Original folders are deleted from sort_me after they're moved.
     cfl.create_folder_list(sort_me, folder_list)
@@ -39,11 +44,9 @@ def sorter(sort_me, tobeposted, used):
                                     f"{tobeposted}/{itemID}")
             shutil.rmtree(f'{sort_me}/{itemID}/')
         
-    
     # After the folders are sorted the individual photo files for used items are pulled from itemID folders and placed into used
     # Then empty folder is deleted. 
     cfl.create_folder_list(used, used_dir)
-    
     
     for itemID in used_dir:
         print(f'{itemID}')
@@ -53,11 +56,21 @@ def sorter(sort_me, tobeposted, used):
             shutil.copy(f'{used}/{itemID}/{photo}', f'{used}')
         shutil.rmtree(f'{used}/{itemID}')
 
-
+    cfl.create_folder_list(tobeposted, module_dir)
+    
+    with open('module_records.json', 'r') as x:
+        module_dict = json.load(x)
+        
+    for itemID in module_dir:
+        if itemID in module_dict and module_dict[f'{itemID}']['Condition'] == 'T':
+            print(f'{itemID} is a trade')
+            dir_util.copy_tree(f"{tobeposted}/{itemID}",
+                                    f"{tobeposted}/{itemID} Trade")
+            shutil.rmtree(f'{tobeposted}/{itemID}')
+            
 ###########################
 start = time.perf_counter()
 
-cfl.create_new_list('Untitled.csv', 'trimmed_file.csv') # Update data set
 sorter('/Volumes/ebay/ToBeEdited/tobesorted', '/Volumes/ebay/testtobeposted', '/Volumes/ImageEngine/testusedinbox' )
 
 finish = time.perf_counter()

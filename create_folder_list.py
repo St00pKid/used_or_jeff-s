@@ -14,16 +14,16 @@ def create_folder_list(src_location , folder_list):
             folder_list.sort()
             
             
-def csv_to_json(src_file):
+def csv_to_json(src_file, output_JSON):
     """Create dictionary with itemID as key and condition as value. Formats json file with itemID as the key and dictionary as the value."""
     # Open and write ebay module csv file to a dictionary list
     json_array = []
-    with open(f'{src_file}', 'r') as ref, open('used_records.json', 'r') as used_records:
+    with open(f'{src_file}', 'r') as ref, open(output_JSON, 'w+') as used_records:
         data_list = DictReader(ref)
         for row in data_list:
             if row not in used_records:
                 json_array.append(row)
-                
+
     # Loop through list and write the itemID value to key for each object and set value to object to create a dictionary of dictionaries
     formatted_dict = {}
     for i in json_array:
@@ -31,15 +31,15 @@ def csv_to_json(src_file):
         formatted_dict[itemid] = i
     
     # Write the formatted dictionary to json file. Overwrites existing file. Overwriting removes the need to purge old records.
-    with open('used_records.json', 'w') as jsonfile:
+    with open(output_JSON, 'w') as jsonfile:
         json_string = json.dumps(formatted_dict,indent=4)
         jsonfile.write(json_string)
 
-def create_new_list(src_file, trimmed_file):
+def create_new_list(src_file, trimmed_file, header, output_JSON):
     """Reads FileMaker export CSV file and appends entries that are not empty to new list. Writes to new csv called trimmed_file.csv
     First arguement needs to be a csv from filemaker to be formatted correctly. Second arg is the trimmed csv file (usually 'trimmed_file.csv) and will be formatted to json.
-    Header is assumed to be 'ItemID', 'ebay_id', 'instock_qty', 'warehouse_qty', 'ebay_team_qty', 'newitemreceiveddate', 
-             'last_upload_date', 'ebay_status', 'last_markedforebay'"""
+    Third arguement is for the csv header. For simplicity it needs to be fed to the function.
+    """
     temp_list = []
     new_list = []
 
@@ -53,13 +53,9 @@ def create_new_list(src_file, trimmed_file):
         if not row[3] == '':
             new_list.append(row)
     
-    HEADER_FM = ['ItemID', 'ebay_id', 'instock_qty', 'warehouse_qty', 'ebay_team_qty', 'newitemreceiveddate', 
-             'last_upload_date', 'ebay_status', 'last_markedforebay']
-    
     with open(f'{trimmed_file}', 'w') as tf:
         csv_writer = writer(tf)
-        csv_writer.writerow(HEADER_FM)
+        csv_writer.writerow(header)
         csv_writer.writerows(new_list)
         
-    csv_to_json(f'{trimmed_file}')
-  
+    csv_to_json(f'{trimmed_file}', f'{output_JSON}')
