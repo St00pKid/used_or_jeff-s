@@ -24,12 +24,19 @@ def csv_to_json(src_file, output_JSON):
             if row not in used_records:
                 json_array.append(row)
 
-    # Loop through list and write the itemID value to key for each object and set value to object to create a dictionary of dictionaries
     formatted_dict = {}
     for i in json_array:
-        itemid = i['ItemID']
-        formatted_dict[itemid] = i
-    
+        j = i['ItemID']
+        j = j.lower()
+        # Set itemID as dictionary key for each item. If consignment or non-inventory the ebay module number is used as the itemID
+        if j == 'consignitem':
+            itemid = i['eBayModuleID']
+            formatted_dict[itemid] = i
+            i['Condition'] = 'Z'
+        else:    
+            itemid = i['ItemID']
+            formatted_dict[itemid] = i
+            
     # Write the formatted dictionary to json file. Overwrites existing file. Overwriting removes the need to purge old records.
     with open(output_JSON, 'w') as jsonfile:
         json_string = json.dumps(formatted_dict,indent=4)

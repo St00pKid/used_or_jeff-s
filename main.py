@@ -3,6 +3,7 @@ import create_folder_list as cfl
 from distutils import dir_util
 import shutil
 import time
+from osxmetadata import *
 
 def sorter(sort_me, tobeposted, used):
     """Sorts folders in first argument to second arguement or third argument based on if they are in the used_records.json. 
@@ -32,17 +33,20 @@ def sorter(sort_me, tobeposted, used):
         if itemID not in used_dict:
             dir_util.copy_tree(f"{sort_me}/{itemID}",
                                     f"{tobeposted}/{itemID}")
-            shutil.rmtree(f'{sort_me}/{itemID}/')
-        
+            
+
         elif used_dict[f'{itemID}']['ebay_id'] == '' or used_dict[f'{itemID}']['ebay_status'] == "Shipped":
             dir_util.copy_tree(f"{sort_me}/{itemID}",
                                     f"{used}/{itemID}")
-            shutil.rmtree(f'{sort_me}/{itemID}/')
             
         else:
             dir_util.copy_tree(f"{sort_me}/{itemID}",
                                     f"{tobeposted}/{itemID}")
+
+        try:
             shutil.rmtree(f'{sort_me}/{itemID}/')
+        except:
+            continue
         
     # After the folders are sorted the individual photo files for used items are pulled from itemID folders and placed into used
     # Then empty folder is deleted. 
@@ -61,13 +65,24 @@ def sorter(sort_me, tobeposted, used):
     with open('module_records.json', 'r') as x:
         module_dict = json.load(x)
         
+
     for itemID in module_dir:
-        if itemID in module_dict and module_dict[f'{itemID}']['Condition'] == 'T':
-            print(f'{itemID} is a trade')
-            dir_util.copy_tree(f"{tobeposted}/{itemID}",
-                                    f"{tobeposted}/{itemID} Trade")
-            shutil.rmtree(f'{tobeposted}/{itemID}')
-            
+        if itemID in module_dict:
+            if module_dict[f'{itemID}']['Condition'] == 'T':
+                dir_util.copy_tree(f"{tobeposted}/{itemID}",
+                                        f"{tobeposted}/{itemID} Trade")
+                shutil.rmtree(f'{tobeposted}/{itemID}')
+        else:
+            print(f'{itemID} not in module. Please check available qty and add to module.')
+    # Adds Finder tag to items in tobeposted/ 
+    cfl.create_folder_list(tobeposted, module_dir)
+    for file_name in module_dir:
+        try:
+            md = OSXMetaData(f"{tobeposted}/{file_name}")
+            md.tags = [Tag("eBay", FINDER_COLOR_RED)]
+        except:
+            continue
+                
 ###########################
 start = time.perf_counter()
 
