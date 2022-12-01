@@ -11,3 +11,5 @@ trimmed_file.csv
 used.csv
 module_records.json
 distressed.csv
+process.env
+.env

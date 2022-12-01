@@ -4,6 +4,13 @@ from distutils import dir_util
 import shutil
 import time
 from osxmetadata import *
+import os
+import pyairtable
+from dotenv import load_dotenv
+load_dotenv()
+
+api_key = os.environ["AIRTABLE_API_KEY"]
+table = pyairtable.Table(api_key, 'appYjtSUYKwHmo9Jm', 'tblJvDpAeO25QDW4N')
 
 def sorter(sort_me, tobeposted, used):
     """Sorts folders in first argument to second arguement or third argument based on if they are in the used_records.json. 
@@ -52,19 +59,23 @@ def sorter(sort_me, tobeposted, used):
     # Then empty folder is deleted. 
     cfl.create_folder_list(used, used_dir)
     
+    at_dict = dict()
+
     for itemID in used_dir:
-        print(f'{itemID}')
         sub_folder = []
         cfl.create_folder_list(f'{used}/{itemID}', sub_folder)
         for photo in sub_folder:
             shutil.copy(f'{used}/{itemID}/{photo}', f'{used}')
         shutil.rmtree(f'{used}/{itemID}')
-
+        at_dict['fld6GYIMufHpENo1X'] = itemID
+        table.create(at_dict)
+    
+    
+    # Add " Trade" to folders for trade-in itemIDs. 
     cfl.create_folder_list(tobeposted, module_dir)
     
     with open('module_records.json', 'r') as x:
         module_dict = json.load(x)
-        
 
     for itemID in module_dir:
         if itemID in module_dict:
@@ -74,15 +85,17 @@ def sorter(sort_me, tobeposted, used):
                 shutil.rmtree(f'{tobeposted}/{itemID}')
         else:
             print(f'{itemID} not in module. Please check available qty and add to module.')
-    # Adds Finder tag to items in tobeposted/ 
+            
+    # Adds Finder tag to items in tobeposted.
     cfl.create_folder_list(tobeposted, module_dir)
     for file_name in module_dir:
         try:
             md = OSXMetaData(f"{tobeposted}/{file_name}")
             md.tags = [Tag("eBay", FINDER_COLOR_RED)]
         except:
-            continue
-                
+            continue      
+        
+
 ###########################
 start = time.perf_counter()
 
@@ -93,13 +106,7 @@ finish = time.perf_counter()
 
 print(f"completed in {finish - start:0.4f} seconds")
 
-# TODO: add 'Trade' to the folder name of items with condition trade.
-#       Will need to pull a report of all items with condition 'T' Trade. Or a report of all items -
-#       assigned to us and loop through them to check against the database. This is on DOMO-ebay module photography
-#       Report is already used for the archive sorter.
-# TODO: Need to add a try to several places where errors occur, for example if used_records is missing it needs to be created
-#       Permission error for folders that are claiming to be in use and for when the imageengine isn't mounted.
-#
-#       working on a GUI to make this runable by others.
+
+# TODO: working GUI to make this runable by others.
 #       Buttons to run the sorters, an exceptions field to skip certain items if they're kicking errors.
 #       Export a used list.
