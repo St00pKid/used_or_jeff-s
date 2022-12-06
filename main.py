@@ -10,10 +10,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 api_key = os.environ["AIRTABLE_API_KEY"]
-table = pyairtable.Table(api_key, 'appYjtSUYKwHmo9Jm', 'tblJvDpAeO25QDW4N')
+table = pyairtable.Table(api_key, 'appzG2a8ZqQgffECD', 'tblUjl5O7XITtaORx')
 
 def sorter(sort_me, tobeposted, used):
-    """Sorts folders in first argument to second arguement or third argument based on if they are in the used_records.json. 
+    """Sorts folders in first argument to second argument or third argument based on if they are in the used_records.json. 
     used_records.json needs to be in the same folder as this file. Arguments for paths are used make it easier to change where the script is pointing.
     
     All used items in inventory are in used_records.json. Sorter looks to see if the items has an assigned ebay_id or if it has a ebay status of shipped. 
@@ -63,12 +63,19 @@ def sorter(sort_me, tobeposted, used):
 
     for itemID in used_dir:
         sub_folder = []
-        cfl.create_folder_list(f'{used}/{itemID}', sub_folder)
-        for photo in sub_folder:
-            shutil.copy(f'{used}/{itemID}/{photo}', f'{used}')
-        shutil.rmtree(f'{used}/{itemID}')
-        at_dict['fld6GYIMufHpENo1X'] = itemID
-        table.create(at_dict)
+        try:
+            cfl.create_folder_list(f'{used}/{itemID}', sub_folder)
+        
+            for photo in sub_folder:
+                shutil.copy(f'{used}/{itemID}/{photo}', f'{used}')
+            shutil.rmtree(f'{used}/{itemID}')
+            # Writes new used records to airtable.
+            at_dict['fldhMuDWW6xC763vG'] = itemID
+            table.create(at_dict)
+            
+        except:
+            continue
+      
     
     
     # Add " Trade" to folders for trade-in itemIDs. 
@@ -109,4 +116,3 @@ print(f"completed in {finish - start:0.4f} seconds")
 
 # TODO: working GUI to make this runable by others.
 #       Buttons to run the sorters, an exceptions field to skip certain items if they're kicking errors.
-#       Export a used list.
