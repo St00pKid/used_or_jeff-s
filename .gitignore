@@ -13,3 +13,4 @@ module_records.json
 distressed.csv
 process.env
 .env
+.DS_Store
