@@ -33,7 +33,7 @@ def sorter(sort_me, tobeposted, used):
     folder_list = []
     used_dir = []
     module_dir = []
-    with open('/Volumes/ebay/pythonscripts/used_or_jeffs/used_records.json', 'r') as x:
+    with open('used_records.json', 'r') as x:
         used_dict = json.load(x)
 
     # Sort the folders from source dir to either used or tobeposted locations.
@@ -86,7 +86,7 @@ def sorter(sort_me, tobeposted, used):
     # TODO: Move trades to a different folder or keep them in tobesorted before adding trade to the 
     cfl.create_folder_list(tobeposted, module_dir)
     
-    with open('/Volumes/ebay/pythonscripts/used_or_jeffs/module_records.json', 'r') as x:
+    with open('module_records.json', 'r') as x:
         module_dict = json.load(x)
 
     for itemID in module_dir:
