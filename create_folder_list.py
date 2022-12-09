@@ -42,7 +42,7 @@ def csv_to_json(src_file, output_JSON):
         json_string = json.dumps(formatted_dict,indent=4)
         jsonfile.write(json_string)
 
-def create_new_list(src_file, trimmed_file, header, output_JSON):
+def create_json(src_file, trimmed_file, header, output_JSON):
     """Reads FileMaker export CSV file and appends entries that are not empty to new list. Writes to new csv called trimmed_file.csv
     First arguement needs to be a csv from filemaker to be formatted correctly. Second arg is the trimmed csv file (usually 'trimmed_file.csv) and will be formatted to json.
     Third arguement is for the csv header. For simplicity it needs to be fed to the function.

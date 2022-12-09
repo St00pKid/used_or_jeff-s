@@ -24,8 +24,8 @@ def sorter(sort_me, tobeposted, used):
              'last_upload_date', 'ebay_status', 'last_markedforebay']
     HEADER_MODULE = ['eBayModuleID', 'ItemID', 'Condition', 'PhotographedBy', 'PhotographedAt', 'DateMarkedForEbay', 'WholesaleCost']
     
-    cfl.create_new_list('Untitled.csv', 'Untitled.csv', HEADER_FM, 'used_records.json')
-    cfl.create_new_list('eBay Module - Photography - All Records.csv', 'eBay Module - Photography - All Records.csv', HEADER_MODULE, 'module_records.json')
+    cfl.create_json('Untitled.csv', 'Untitled.csv', HEADER_FM, 'used_records.json')
+    cfl.create_json('eBay Module - Photography - All Records.csv', 'eBay Module - Photography - All Records.csv', HEADER_MODULE, 'module_records.json')
     
     folder_list = []
     used_dir = []
