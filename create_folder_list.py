@@ -50,18 +50,16 @@ def create_new_list(src_file, trimmed_file, header, output_JSON):
     temp_list = []
     new_list = []
 
-    with open(f'{src_file}', 'r', newline='') as csv_file:
+    with open(f'{src_file}', 'r+', newline='') as csv_file:
         csv_list = list(reader(csv_file))
         for row in csv_list:
             if not row[0] == '':
                 temp_list.append(row)
-    
-    for row in temp_list:
-        if not row[3] == '':
-            new_list.append(row)
-            
-    with open(f'{trimmed_file}', 'w') as tf:
-        csv_writer = writer(tf)
+        csv_file.seek(0)
+        for row in temp_list:
+            if not row[3] == '':
+                new_list.append(row)
+        csv_writer = writer(csv_file)
         csv_writer.writerow(header)
         csv_writer.writerows(new_list)
         
