@@ -1,12 +1,15 @@
 import json
-import create_folder_list as cfl
-from distutils import dir_util
+import os
 import shutil
 import time
-from osxmetadata import *
-import os
+from distutils import dir_util
+
 import pyairtable
 from dotenv import load_dotenv
+from osxmetadata import *
+
+import create_folder_list as cfl
+
 load_dotenv()
 
 api_key = os.environ["AIRTABLE_API_KEY"]
@@ -16,7 +19,7 @@ def sorter(sort_me, tobeposted, used):
     """Sorts folders in first argument to second argument or third argument based on if they are in the used_records.json. 
     used_records.json needs to be in the same folder as this file. Arguments for paths are used make it easier to change where the script is pointing.
     
-    All used items in inventory are in used_records.json. Sorter looks to see if the items has an assigned ebay_id or if it has a ebay status of shipped. 
+    All u‚sed items in inventory are in used_records.json. Sorter looks to see if the items has an assigned ebay_id or if it has a ebay status of shipped. 
     If True the folder with photos is moved to whatever folder is assigned to the used argument. If False the are moved to the tobeposted argument.
     After folders are moved the individual image files in the used item folders are moved from their folders to the used directory and the original folders
     are deleted."""
@@ -30,7 +33,7 @@ def sorter(sort_me, tobeposted, used):
     folder_list = []
     used_dir = []
     module_dir = []
-    with open('used_records.json', 'r') as x:
+    with open('/Volumes/ebay/pythonscripts/used_or_jeffs/used_records.json', 'r') as x:
         used_dict = json.load(x)
 
     # Sort the folders from source dir to either used or tobeposted locations.
@@ -79,9 +82,11 @@ def sorter(sort_me, tobeposted, used):
     
     
     # Add " Trade" to folders for trade-in itemIDs. 
+    
+    # TODO: Move trades to a different folder or keep them in tobesorted before adding trade to the 
     cfl.create_folder_list(tobeposted, module_dir)
     
-    with open('module_records.json', 'r') as x:
+    with open('/Volumes/ebay/pythonscripts/used_or_jeffs/module_records.json', 'r') as x:
         module_dict = json.load(x)
 
     for itemID in module_dir:
@@ -100,6 +105,7 @@ def sorter(sort_me, tobeposted, used):
             md = OSXMetaData(f"{tobeposted}/{file_name}")
             md.tags = [Tag("eBay", FINDER_COLOR_RED)]
         except:
+            print(f"Tag writing failed for {file_name}")
             continue      
         
 
