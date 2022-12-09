@@ -59,10 +59,11 @@ def create_new_list(src_file, trimmed_file, header, output_JSON):
     for row in temp_list:
         if not row[3] == '':
             new_list.append(row)
-# TODO: rewrite function to get around the trimmed file.
+            
     with open(f'{trimmed_file}', 'w') as tf:
         csv_writer = writer(tf)
         csv_writer.writerow(header)
         csv_writer.writerows(new_list)
         
     csv_to_json(f'{trimmed_file}', f'{output_JSON}')
+    
