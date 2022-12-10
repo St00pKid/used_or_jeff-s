@@ -83,7 +83,7 @@ def sorter(sort_me, tobeposted, used):
     
     # Add " Trade" to folders for trade-in itemIDs. 
     
-    # TODO: Move trades to a different folder or keep them in tobesorted before adding trade to the 
+    # TODO: Move trades to a different folder or keep them in tobesorted before adding trade to the folder name.
     cfl.create_folder_list(tobeposted, module_dir)
     
     with open('module_records.json', 'r') as x:
@@ -112,7 +112,7 @@ def sorter(sort_me, tobeposted, used):
 ###########################
 start = time.perf_counter()
 
-sorter('/Volumes/ebay/pythonscripts/used_or_jeffs/Testing-branch/sort', '/Volumes/ebay/pythonscripts/used_or_jeffs/Testing-branch/tobeposted', '/Volumes/ebay/pythonscripts/used_or_jeffs/Testing-branch/used')
+sorter('/Volumes/ebay/ToBeEdited/tobesorted', '/Volumes/ebay/testtobeposted', '/Volumes/ImageEngine/testusedinbox')
 
 finish = time.perf_counter()
 ############################
