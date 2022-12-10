@@ -12,30 +12,6 @@ def create_folder_list(src_location , folder_list):
             # Add folders to folder_list
             folder_list.append(f)
             folder_list.sort()
-            
-            
-def csv_to_json(src_file, output_JSON):
-    """Create dictionary with itemID as key and condition as value. Formats json file with itemID as the key and dictionary as the value."""
-    # Open and write ebay module csv file to a dictionary list
-
-
-    formatted_dict = {}
-    for i in json_array:
-        j = i['ItemID']
-        j = j.lower()
-        # Set itemID as dictionary key for each item. If consignment or non-inventory the ebay module number is used as the itemID
-        if j == 'consignitem':
-            itemid = i['eBayModuleID']
-            formatted_dict[itemid] = i
-            i['Condition'] = 'Z'
-        else:    
-            itemid = i['ItemID']
-            formatted_dict[itemid] = i
-            
-    # Write the formatted dictionary to json file. Overwrites existing file. Overwriting removes the need to purge old records.
-    with open(output_JSON, 'w') as jsonfile:
-        json_string = json.dumps(formatted_dict,indent=4)
-        jsonfile.write(json_string)
 
 def create_json(src_file, trimmed_file, header, output_JSON):
     """Reads FileMaker export CSV file and appends entries that are not empty to new list. Writes to new csv called trimmed_file.csv
