@@ -57,7 +57,6 @@ def create_json(src_file, trimmed_file, header, output_JSON):
                 temp_list.append(row)
         csv_file.seek(0)
         for row in temp_list:
-            if not row[3] == '':
                 new_list.append(row)
         csv_writer = writer(csv_file)
         csv_writer.writerow(header)
