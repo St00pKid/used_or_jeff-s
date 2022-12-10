@@ -48,19 +48,16 @@ def create_json(src_file, trimmed_file, header, output_JSON):
     Third arguement is for the csv header. For simplicity it needs to be fed to the function.
     """
     temp_list = []
-    new_list = []
 
     with open(f'{src_file}', 'r+', newline='') as csv_file:
         csv_list = list(reader(csv_file))
         for row in csv_list:
-            if not row[0] == '':
+            if not row[0] == '' or row[2] == '':
                 temp_list.append(row)
         csv_file.seek(0)
-        for row in temp_list:
-                new_list.append(row)
         csv_writer = writer(csv_file)
         csv_writer.writerow(header)
-        csv_writer.writerows(new_list)
+        csv_writer.writerows(temp_list)
         
     csv_to_json(f'{trimmed_file}', f'{output_JSON}')
     
