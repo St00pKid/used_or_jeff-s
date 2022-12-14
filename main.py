@@ -10,9 +10,16 @@ from osxmetadata import *
 
 import create_folder_list as cfl
 
+# This is a workaround to needing an API key saved to your OS config. 
+# If the API key is saved to the OS enviroment this code is no longer needed.
+# There is a .env file in the directory with this file, this command sets that file as the development enviroment.
+# The API key is stored there. 
 load_dotenv()
-
 api_key = os.environ["AIRTABLE_API_KEY"]
+
+# These numbers are the unique IDs for the bases on airtable and will need to be updated each month. 
+# Or ideally a new table is created on the same base so only one number will need to be changed.
+# The new numbers can be found on the airtable API. The API updates based on your changes to the base or tables, it's very intuitive.
 table = pyairtable.Table(api_key, 'appzG2a8ZqQgffECD', 'tblUjl5O7XITtaORx')
 
 def sorter(sort_me, tobeposted, used):
@@ -30,9 +37,9 @@ def sorter(sort_me, tobeposted, used):
     cfl.create_json('Untitled.csv', 'Untitled.csv', HEADER_FM, 'used_records.json')
     cfl.create_json('eBay Module - Photography - All Records.csv', 'eBay Module - Photography - All Records.csv', HEADER_MODULE, 'module_records.json')
     
-    folder_list = []
-    used_dir = []
-    module_dir = []
+    folder_list = list()
+    used_dir = list()
+    module_dir = list()
     with open('used_records.json', 'r') as x:
         used_dict = json.load(x)
 
@@ -43,7 +50,6 @@ def sorter(sort_me, tobeposted, used):
         if itemID not in used_dict:
             dir_util.copy_tree(f"{sort_me}/{itemID}",
                                     f"{tobeposted}/{itemID}")
-            
 
         elif used_dict[f'{itemID}']['ebay_id'] == '' or used_dict[f'{itemID}']['ebay_status'] == "Shipped":
             dir_util.copy_tree(f"{sort_me}/{itemID}",
@@ -58,6 +64,22 @@ def sorter(sort_me, tobeposted, used):
         except:
             continue
         
+        with open('module_records.json', 'r') as x:
+            module_dict = json.load(x)
+            
+        if itemID in module_dict:
+            if module_dict[f'{itemID}']['Condition'] == 'T':
+                dir_util.copy_tree(f"{tobeposted}/{itemID}",
+                                        f"{tobeposted}/{itemID} Trade")
+                shutil.rmtree(f'{tobeposted}/{itemID}')
+        else:
+            print(f'{itemID} not in module. Please check available qty and add to module.')        
+        try:
+            md = OSXMetaData(f"{tobeposted}/{itemID}")
+            md.tags = [Tag("eBay", FINDER_COLOR_RED)]
+        except:
+            continue
+        
     # After the folders are sorted the individual photo files for used items are pulled from itemID folders and placed into used
     # Then empty folder is deleted. 
     cfl.create_folder_list(used, used_dir)
@@ -65,22 +87,22 @@ def sorter(sort_me, tobeposted, used):
     at_dict = dict()
 
     for itemID in used_dir:
-        sub_folder = []
+        sub_folder = list()
         try:
             cfl.create_folder_list(f'{used}/{itemID}', sub_folder)
         
             for photo in sub_folder:
                 shutil.copy(f'{used}/{itemID}/{photo}', f'{used}')
             shutil.rmtree(f'{used}/{itemID}')
-            # Writes new used records to airtable.
+            
+            # Writes new used records to Airtable.
+            # This string is the unique ID airtable uses for that column, it will need to be updated for each month.
             at_dict['fldhMuDWW6xC763vG'] = itemID
             table.create(at_dict)
             
         except:
             continue
-      
-    
-    
+          
     # Add " Trade" to folders for trade-in itemIDs. 
     
     # TODO: Move trades to a different folder or keep them in tobesorted before adding trade to the folder name.
@@ -89,26 +111,17 @@ def sorter(sort_me, tobeposted, used):
     with open('module_records.json', 'r') as x:
         module_dict = json.load(x)
 
-    for itemID in module_dir:
-        if itemID in module_dict:
-            if module_dict[f'{itemID}']['Condition'] == 'T':
-                dir_util.copy_tree(f"{tobeposted}/{itemID}",
-                                        f"{tobeposted}/{itemID} Trade")
-                shutil.rmtree(f'{tobeposted}/{itemID}')
-        else:
-            print(f'{itemID} not in module. Please check available qty and add to module.')
+    # for itemID in module_dir:
+    #     itemID = itemID.split(' ')
+    #     if itemID in module_dict:
+    #         if module_dict[f'{itemID}']['Condition'] == 'T':
+    #             dir_util.copy_tree(f"{tobeposted}/{itemID}",
+    #                                     f"{tobeposted}/{itemID} Trade")
+    #             shutil.rmtree(f'{tobeposted}/{itemID}')
+    #     else:
+    #         print(f'{itemID} not in module. Please check available qty and add to module.')
             
-    # Adds Finder tag to items in tobeposted.
-    cfl.create_folder_list(tobeposted, module_dir)
-    for file_name in module_dir:
-        try:
-            md = OSXMetaData(f"{tobeposted}/{file_name}")
-            md.tags = [Tag("eBay", FINDER_COLOR_RED)]
-        except:
-            print(f"Tag writing failed for {file_name}")
-            continue      
         
-
 ###########################
 start = time.perf_counter()
 
