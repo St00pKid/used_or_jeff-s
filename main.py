@@ -55,7 +55,7 @@ def sorter(sort_me, tobeposted, used):
             module_list.append(itemID)
             
         if itemID not in module_dict and itemID not in used_dict:
-            if ' prop' in itemID.lower() or ' trade' in itemID.lower():
+            if ' ' in itemID:
                 itemID_split = itemID.split(' ')
                 itemID_split = itemID_split[0] # Try removing additional strs from folder name, eg; prop or trade.
                 if itemID_split not in module_dict and itemID_split not in used_dict:
@@ -77,19 +77,6 @@ def sorter(sort_me, tobeposted, used):
             shutil.rmtree(f'{sort_me}/{itemID}/')
         except Exception:
             continue
-
-        #     try:
-        #         md = OSXMetaData(f"{tobeposted}/{itemID}")
-        #         md.tags = [Tag("eBay", FINDER_COLOR_RED)]
-        #     except:
-        #         continue
-        #     if module_dict[f'{itemID}']['Condition'] == 'T':
-        #         dir_util.copy_tree(f"{tobeposted}/{itemID}",
-        #                                 f"{tobeposted}/{itemID} Trade")
-        #         shutil.rmtree(f'{tobeposted}/{itemID}')
-        # else:
-        #     print(f'{itemID} not in module. Please check available qty and add to module.')        
-
         
     # After the folders are sorted the individual photo files for used items are pulled from itemID folders and placed into used
     # Then empty folder is deleted. 
