@@ -14,4 +14,3 @@ distressed.csv
 process.env
 .env
 .DS_Store
-gui.py
