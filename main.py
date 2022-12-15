@@ -39,7 +39,10 @@ def sorter(sort_me, tobeposted, used):
     
     folder_list = list()
     used_dir = list()
-    module_dir = list()
+    module_list = list()
+    
+    with open('module_records.json', 'r') as x:
+        module_dict = json.load(x)
     with open('used_records.json', 'r') as x:
         used_dict = json.load(x)
 
@@ -47,6 +50,17 @@ def sorter(sort_me, tobeposted, used):
     # Original folders are deleted from sort_me after they're moved.
     cfl.create_folder_list(sort_me, folder_list)
     for itemID in folder_list:
+        
+        if itemID in module_dict:
+            module_list.append(itemID)
+            
+        if itemID not in module_dict and itemID not in used_dict:
+            if ' prop' in itemID.lower() or ' trade' in itemID.lower():
+                itemID_split = itemID.split(' ')
+                itemID_split = itemID_split[0] # Try removing additional strs from folder name, eg; prop or trade.
+                if itemID_split not in module_dict and itemID_split not in used_dict:
+                    print(f"{itemID} not used or in the module.")   
+            
         if itemID not in used_dict:
             dir_util.copy_tree(f"{sort_me}/{itemID}",
                                     f"{tobeposted}/{itemID}")
@@ -61,29 +75,25 @@ def sorter(sort_me, tobeposted, used):
 
         try:
             shutil.rmtree(f'{sort_me}/{itemID}/')
-        except:
+        except Exception:
             continue
-        
-        with open('module_records.json', 'r') as x:
-            module_dict = json.load(x)
-            
-        if itemID in module_dict:
-            if module_dict[f'{itemID}']['Condition'] == 'T':
-                dir_util.copy_tree(f"{tobeposted}/{itemID}",
-                                        f"{tobeposted}/{itemID} Trade")
-                shutil.rmtree(f'{tobeposted}/{itemID}')
-        else:
-            print(f'{itemID} not in module. Please check available qty and add to module.')        
-        try:
-            md = OSXMetaData(f"{tobeposted}/{itemID}")
-            md.tags = [Tag("eBay", FINDER_COLOR_RED)]
-        except:
-            continue
+
+        #     try:
+        #         md = OSXMetaData(f"{tobeposted}/{itemID}")
+        #         md.tags = [Tag("eBay", FINDER_COLOR_RED)]
+        #     except:
+        #         continue
+        #     if module_dict[f'{itemID}']['Condition'] == 'T':
+        #         dir_util.copy_tree(f"{tobeposted}/{itemID}",
+        #                                 f"{tobeposted}/{itemID} Trade")
+        #         shutil.rmtree(f'{tobeposted}/{itemID}')
+        # else:
+        #     print(f'{itemID} not in module. Please check available qty and add to module.')        
+
         
     # After the folders are sorted the individual photo files for used items are pulled from itemID folders and placed into used
     # Then empty folder is deleted. 
     cfl.create_folder_list(used, used_dir)
-    
     at_dict = dict()
 
     for itemID in used_dir:
@@ -100,27 +110,30 @@ def sorter(sort_me, tobeposted, used):
             at_dict['fldhMuDWW6xC763vG'] = itemID
             table.create(at_dict)
             
-        except:
+        except Exception:
             continue
           
     # Add " Trade" to folders for trade-in itemIDs. 
-    
-    # TODO: Move trades to a different folder or keep them in tobesorted before adding trade to the folder name.
-    cfl.create_folder_list(tobeposted, module_dir)
-    
-    with open('module_records.json', 'r') as x:
-        module_dict = json.load(x)
-
-    # for itemID in module_dir:
-    #     itemID = itemID.split(' ')
-    #     if itemID in module_dict:
-    #         if module_dict[f'{itemID}']['Condition'] == 'T':
-    #             dir_util.copy_tree(f"{tobeposted}/{itemID}",
-    #                                     f"{tobeposted}/{itemID} Trade")
-    #             shutil.rmtree(f'{tobeposted}/{itemID}')
-    #     else:
-    #         print(f'{itemID} not in module. Please check available qty and add to module.')
+    for itemID in module_list:
+        itemID = itemID.split(' ').pop()
+        if module_dict[f'{itemID}']['Condition'] == 'T':
+            try:
+                dir_util.copy_tree(f"{tobeposted}/{itemID}",
+                                    f"{tobeposted}/{itemID} Trade")
+                md = OSXMetaData(f"{tobeposted}/{itemID} Trade")
+                md.tags = [Tag("eBay", FINDER_COLOR_RED)]
+                shutil.rmtree(f'{tobeposted}/{itemID}')
+            except Exception:
+                print(f'Error: add "Trade" loop - {itemID}')
+        else:
+            try:
+                md = OSXMetaData(f"{tobeposted}/{itemID}")
+                md.tags = [Tag("eBay", FINDER_COLOR_RED)]
+            except Exception:
+                print(f'Error: adding finder tag - {itemID}') 
+                continue
             
+        
         
 ###########################
 start = time.perf_counter()
