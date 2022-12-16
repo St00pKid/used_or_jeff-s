@@ -15,3 +15,8 @@ process.env
 .env
 .DS_Store
 gui.py
+.idea/misc.xml
+.idea/modules.xml
+.idea/used_or_jeffs.iml
+.idea/vcs.xml
+.idea/inspectionProfiles/profiles_settings.xml
