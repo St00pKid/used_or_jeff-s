@@ -9,7 +9,7 @@ toBePosted = '/Volumes/ebay/testtobeposted'
 sg.theme('SystemDefault1')
 
 layout = [
-    [sg.Text("Directory where files to be sorted currently reside. Most likely in tobesorted in tobeedited")],
+    [sg.Text("Directory where files to be sorted currently reside. Most likely tobesorted in tobeedited")],
     [sg.Input(default_text = '/Volumes/ebay/ToBeEdited/tobesorted', key = 'guiToBeSorted'), sg.FolderBrowse(initial_folder = '/Volumes/ebay/ToBeEdited/tobesorted', font=('arial', 16))],
     [sg.Text("Directory where used items will go. Most likely in imageengine.")],
     [sg.Input(default_text = '/Volumes/ImageEngine/testusedinbox', key = 'guiToBeUsed'), sg.FolderBrowse(initial_folder = '/Volumes/ImageEngine/testusedinbox', font=('arial', 16))],
@@ -22,13 +22,12 @@ layout = [
 window = sg.Window('Distressed Gear Team Tools', layout)
 
 while True:
-    event, values = window.read()
-    if event == sg.WINDOW_CLOSED or event == 'Quit':
-        break
-    
-    if event =='Submit':
-        toBeSorted = values['guiToBeSorted']
-        used = values['guiToBeUsed']
-        toBePosted = values['guiToBePosted']
+        event, values = window.read()
+        if event == sg.WINDOW_CLOSED or event == 'Quit':
+            break
         
-        print(f'Submit! {toBeSorted}')
+        if event =='Submit':
+            toBeSorted = values['guiToBeSorted']
+            used = values['guiToBeUsed']
+            toBePosted = values['guiToBePosted']
+            
