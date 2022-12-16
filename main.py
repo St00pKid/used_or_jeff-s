@@ -7,8 +7,26 @@ from distutils import dir_util
 import pyairtable
 from dotenv import load_dotenv
 from osxmetadata import *
+import PySimpleGUIWx as sg
 
 import create_folder_list as cfl
+
+# Gui variables
+sg.theme('SystemDefault1')
+
+layout = [
+    [sg.Text("Directory where files to be sorted currently reside. Most likely tobesorted in tobeedited")],
+    [sg.Input(default_text = '/Volumes/ebay/ToBeEdited/tobesorted', key = 'guiToBeSorted'), sg.FolderBrowse(initial_folder = '/Volumes/ebay/ToBeEdited/tobesorted', font=('arial', 16))],
+    [sg.Text("Directory where used items will go. Most likely in imageengine.")],
+    [sg.Input(default_text = '/Volumes/ImageEngine/testusedinbox', key = 'guiToBeUsed'), sg.FolderBrowse(initial_folder = '/Volumes/ImageEngine/testusedinbox', font=('arial', 16))],
+    [sg.Text("Directory where non-used (anything for Jeff's Music Gear) will go. Most likely tobeposted")],
+    [sg.Input(default_text = '/Volumes/ebay/testtobeposted', key = 'guiToBePosted'), sg.FolderBrowse(initial_folder = '/Volumes/ebay/testtobeposted', font=('arial', 16))],       
+    [sg.Button('Submit', auto_size_button=True, font=('arial', 16)), sg.Button('Quit', auto_size_button=True, font=('arial', 16))],
+    [sg.Text(' ', key="-STATUS-")],
+    [sg.Button("RUN",font=('arial', 16),auto_size_button=True),sg.Text("Update the csv files before doing this!!")],
+    ]
+
+window = sg.Window('Distressed Gear Team Tools', layout)
 
 # This is a workaround to needing an API key saved to your OS config. 
 # If the API key is saved to the OS enviroment this code is no longer needed.
@@ -30,6 +48,8 @@ def sorter(sort_me, tobeposted, used):
     If True the folder with photos is moved to whatever folder is assigned to the used argument. If False the are moved to the tobeposted argument.
     After folders are moved the individual image files in the used item folders are moved from their folders to the used directory and the original folders
     are deleted."""
+    start = time.perf_counter()
+    
     HEADER_FM = ['ItemID', 'ebay_id', 'instock_qty', 'warehouse_qty', 'ebay_team_qty', 'newitemreceiveddate', 
              'last_upload_date', 'ebay_status', 'last_markedforebay']
     HEADER_MODULE = ['eBayModuleID', 'ItemID', 'Condition', 'PhotographedBy', 'PhotographedAt', 'DateMarkedForEbay', 'WholesaleCost']
@@ -120,18 +140,27 @@ def sorter(sort_me, tobeposted, used):
                 print(f'Error: adding finder tag - {itemID}') 
                 continue
             
-        
-        
+    finish = time.perf_counter()
+    print(f"completed in {finish - start:0.4f} seconds")
+
+            
 ###########################
-start = time.perf_counter()
 
-sorter('/Volumes/ebay/ToBeEdited/tobesorted', '/Volumes/ebay/testtobeposted', '/Volumes/ImageEngine/testusedinbox')
+while True:
+        event, values = window.read()
+        if event == sg.WINDOW_CLOSED or event == 'Quit':
+            break
+        
+        if event =='Submit':
+            toBeSorted = values['guiToBeSorted']
+            used = values['guiToBeUsed']
+            toBePosted = values['guiToBePosted']
+            window["-STATUS-"].update("Locations updated")
+            
+        if event =='RUN':
+            sorter(toBeSorted, toBePosted, used)
 
-finish = time.perf_counter()
 ############################
-
-print(f"completed in {finish - start:0.4f} seconds")
-
 
 # TODO: working GUI to make this runable by others.
 #       Buttons to run the sorters, an exceptions field to skip certain items if they're kicking errors.
