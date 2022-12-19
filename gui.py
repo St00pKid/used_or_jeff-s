@@ -1,6 +1,5 @@
 import PySimpleGUIWx as sg
 
-
 toBeSorted = '/Volumes/ebay/ToBeEdited/tobesorted'
 used = '/Volumes/ImageEngine/testusedinbox'
 toBePosted = '/Volumes/ebay/testtobeposted'
