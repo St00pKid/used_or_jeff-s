@@ -46,7 +46,7 @@ api_key = os.environ["AIRTABLE_API_KEY"]
 # These numbers are the unique IDs for the bases on airtable and will need to be updated each month. Or ideally a new
 # table is created on the same base so only one number will need to be changed. The new numbers can be found on the
 # airtable API. The API updates based on your changes to the base or tables, it's very intuitive.
-table = pyairtable.Table(api_key, 'appzG2a8ZqQgffECD', 'tblUjl5O7XITtaORx')
+table = pyairtable.Table(api_key, 'app2if5meefQ7EFqX', 'tblSzoxPJF0pUrRz0')
 
 
 def sorter(sort_me = '/Volumes/ebay/ToBeEdited/tobesorted', tobeposted = '/Volumes/ebay/testtobeposted', used = '/Volumes/ImageEngine/testusedinbox'):
@@ -130,8 +130,8 @@ def sorter(sort_me = '/Volumes/ebay/ToBeEdited/tobesorted', tobeposted = '/Volum
 
             # Writes new used records to Airtable.
             # This string is the unique ID airtable uses for that column, it will need to be updated for each month.
-            at_dict['fldhMuDWW6xC763vG'] = itemID
-            at_dict.update({'fldvCCUR9V8KpNFrM': used_dict[f'{itemID}']['last-photo-by']})
+            at_dict['fldsAJPZhPfFfGge8'] = itemID
+            at_dict.update({'fldTDaRZF3PrAomvQ': used_dict[f'{itemID}']['last-photo-by']})
             table.create(at_dict)
         except Exception:
             print(f'{itemID}: Error in used inbox while shuffling files and sending to Airtable.')

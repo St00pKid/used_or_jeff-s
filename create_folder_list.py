@@ -13,6 +13,7 @@ def create_folder_list(src_location , folder_list):
             folder_list.append(f)
             folder_list.sort()
     return folder_list
+
 def create_json(src_file, trimmed_file, header, output_JSON):
     """Reads FileMaker export CSV file and appends entries that are not empty to new list. Writes to new csv called trimmed_file.csv
     First arguement needs to be a csv from filemaker to be formatted correctly. Second arg is the trimmed csv file (usually 'trimmed_file.csv) and will be formatted to json.
