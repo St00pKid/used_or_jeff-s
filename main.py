@@ -88,7 +88,7 @@ api_key = os.environ["AIRTABLE_API_KEY"]
 # The new numbers can be found on the airtable API. 
 # The API updates based on your changes to the base or tables, 
 # it's very intuitive.
-table = pyairtable.Table(api_key, 'appzG2a8ZqQgffECD', 'tblUjl5O7XITtaORx')
+table = pyairtable.Table(api_key, 'app7wwyKDrOI3hgc6', 'tbl5Lha83X1UPjLEB')
 
 
 def sorter(
@@ -177,8 +177,8 @@ def sorter(
             # Writes new used records to Airtable.
             # Keys are the unique IDs Airtable uses for that column, 
             # it will need to be updated for each month.
-            at_dict['fldhMuDWW6xC763vG'] = itemID
-            at_dict.update({'fldvCCUR9V8KpNFrM': 
+            at_dict['fldH5f1pGVdCjJGyr'] = itemID
+            at_dict.update({'fld3CtQJDviDuMpnX': 
                                 used_dict[f'{itemID}']['last-photo-by']})
             table.create(at_dict)
         except Exception:
@@ -186,23 +186,27 @@ def sorter(
 
     # Add " Trade" to folders for trade-in itemIDs. 
     for itemID in module_list:
-        itemID = itemID.split(' ').pop()
-        if used_dict[f'{itemID}']['condition'] == 'T':
-            try:
-                os.rename(f"{tobeposted}/{itemID}",
-                          f"{tobeposted}/{itemID} Trade")
-                md = OSXMetaData(f"{tobeposted}/{itemID} Trade")
-                md.tags = [Tag("eBay", FINDER_COLOR_RED)]
-            except Exception:
-                print(f'{itemID} : Unable to add trade to folder name')
-                
-        else:
-            try:
-                md = OSXMetaData(f"{tobeposted}/{itemID}")
-                md.tags = [Tag("eBay", FINDER_COLOR_RED)]
-            except Exception:
-                print(f'Error: adding finder tag - {itemID}')
-                continue
+        itemID = itemID.split(' ')
+        itemID = itemID[0]
+        try:
+            if used_dict[f'{itemID}']['condition'] == 'T':
+                try:
+                    os.rename(f"{tobeposted}/{itemID}",
+                            f"{tobeposted}/{itemID} Trade")
+                    md = OSXMetaData(f"{tobeposted}/{itemID} Trade")
+                    md.tags = [Tag("eBay", FINDER_COLOR_RED)]
+                except Exception:
+                    print(f'{itemID} : Unable to add trade to folder name')
+                    
+            else:
+                try:
+                    md = OSXMetaData(f"{tobeposted}/{itemID}")
+                    md.tags = [Tag("eBay", FINDER_COLOR_RED)]
+                except Exception:
+                    continue
+        except KeyError:
+            print(f"KeyError: {itemID}")        
+        
     
     finish = time.perf_counter()
     print(f"completed in {finish - start:0.4f} seconds")
