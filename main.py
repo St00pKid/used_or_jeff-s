@@ -117,7 +117,8 @@ def sorter(
     used_dir = list()
     module_list = list()
     photog = dict()
-
+    folder_list = list()
+    
     # clean the backup folder
     d = glob.glob(backup_Dir)
     for i in d:
@@ -129,30 +130,33 @@ def sorter(
     # Sort the folders from source dir to either used or tobeposted locations.
     # Original folders are deleted from sort_me after they're moved.
     cfl.create_folder_list(sort_me, folder_list)
-    
+
     for itemID in folder_list:
-                            
-        if itemID in used_dict:
-            if (used_dict[f'{itemID}']['ebay_id'] != "" and 
-                    used_dict[f'{itemID}']['ebay_status'] != 'Shipped'):
-                dir_util.copy_tree(f"{sort_me}/{itemID}",
-                                   f"{tobeposted}/{itemID}")
-                module_list.append(itemID)
-                shutil.move(f'{sort_me}/{itemID}/',
-                            f'backup/{itemID}')
-                
-            elif used_dict[f'{itemID}']['condition'] == 'U':
-                if (used_dict[f'{itemID}']['ebay_status'] == '' or 
+        try:
+            # Copy items with condition U(sed) to correct location.
+            # All other conditions need to go to tobeposted.
+            if used_dict[f'{itemID}']['condition'] == 'U': 
+                if (used_dict[f'{itemID}']['ebay_id'] != "" and 
+                        used_dict[f'{itemID}']['ebay_status'] != 'Shipped'):
+                    dir_util.copy_tree(f"{sort_me}/{itemID}",
+                                    f"{tobeposted}/{itemID}")
+                    module_list.append(itemID)
+                    shutil.move(f'{sort_me}/{itemID}/',
+                                f'backup/{itemID}')
+                    
+                elif (used_dict[f'{itemID}']['ebay_status'] == '' or 
                         used_dict[f'{itemID}']['ebay_status'] == 'Shipped'):
                     dir_util.copy_tree(f"{sort_me}/{itemID}",
                                        f"{used}/{itemID}")
                     photog['Photographer'] = used_dict[f'{itemID}']['last-photo-by']
                     shutil.move(f'{sort_me}/{itemID}/', 
                                 f'backup/{itemID}')
-                                        
-        else:
+            else:
+               raise KeyError
+        # Error is raised if the itemID is not in our assigned workload.
+        # These items are to be sent to the tobeposted folder.
+        except KeyError:
             module_list.append(itemID)
-                    
             dir_util.copy_tree(f"{sort_me}/{itemID}",
                                f"{tobeposted}/{itemID}")
             shutil.move(f'{sort_me}/{itemID}/', 

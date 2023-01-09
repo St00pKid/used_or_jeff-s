@@ -9,8 +9,6 @@ def create_folder_list(src_location , folder_list):
         if not f.startswith("."):
             # Add folders to folder_list
             folder_list.append(f)
-            folder_list.sort()
-    return folder_list
 
 def create_json(src_file, trimmed_file, header, output_JSON):
     temp_list = []
